@@ -30,25 +30,25 @@ const Footer = () => {
       name: 'Instagram', 
       href: 'https://instagram.com/saraali', 
       icon: Instagram,
-      color: 'hover:text-pink-500'
+      gradient: 'from-pink-500 to-orange-500'
     },
     { 
       name: 'LinkedIn', 
       href: 'https://linkedin.com/in/saraali', 
       icon: Linkedin,
-      color: 'hover:text-blue-600'
+      gradient: 'from-blue-600 to-blue-400'
     },
     { 
       name: 'Twitter', 
       href: 'https://twitter.com/saraali', 
       icon: Twitter,
-      color: 'hover:text-blue-400'
+      gradient: 'from-blue-400 to-cyan-400'
     },
     { 
       name: 'Dribbble', 
       href: 'https://dribbble.com/saraali', 
       icon: Dribbble,
-      color: 'hover:text-pink-400'
+      gradient: 'from-pink-400 to-rose-400'
     }
   ];
 
@@ -80,7 +80,7 @@ const Footer = () => {
                 <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground">
                   Follow My Work
                 </h4>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-3">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
                     return (
@@ -89,10 +89,12 @@ const Footer = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center justify-center w-12 h-12 rounded-xl bg-muted/50 text-muted-foreground transition-all duration-300 hover:bg-primary/10 hover:scale-110 hover:shadow-lg ${social.color} group`}
+                        className={`group relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${social.gradient} p-0.5 hover:scale-110 hover:shadow-lg transition-all duration-300`}
                         aria-label={social.name}
                       >
-                        <Icon size={20} className="group-hover:scale-110 transition-transform" />
+                        <div className="flex items-center justify-center w-full h-full bg-background rounded-[10px] group-hover:bg-transparent transition-all duration-300">
+                          <Icon size={18} className="text-muted-foreground group-hover:text-white transition-colors duration-300" />
+                        </div>
                       </a>
                     );
                   })}

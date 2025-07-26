@@ -65,12 +65,13 @@ const Header = () => {
           >
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Sparkles size={20} className="text-white" />
+                <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 group-hover:rotate-12">
+                  <Sparkles size={20} className="text-white group-hover:animate-pulse" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl opacity-20 group-hover:animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
               </div>
-              <div className="font-display text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent group-hover:from-primary group-hover:to-accent transition-all duration-300">
+              <div className="font-sans text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent group-hover:from-primary group-hover:to-accent transition-all duration-500">
                 Sara Ali
               </div>
             </div>
@@ -78,21 +79,22 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center">
-            <div className="flex items-center space-x-1 bg-muted/30 backdrop-blur-sm rounded-full p-2">
+            <div className="flex items-center space-x-1 bg-background/70 backdrop-blur-xl rounded-full p-2 border border-border/50 shadow-lg">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 ${
+                  className={`relative px-6 py-3 text-sm font-medium rounded-full transition-all duration-500 group ${
                     activeSection === item.id
-                      ? 'bg-primary text-primary-foreground shadow-lg'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
+                      ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg scale-105'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:scale-105'
                   }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <div className="absolute inset-0 bg-primary rounded-full animate-pulse opacity-20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 animate-pulse"></div>
                   )}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               ))}
             </div>
@@ -101,19 +103,20 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden relative w-12 h-12 flex items-center justify-center rounded-xl bg-muted/50 backdrop-blur-sm transition-all duration-300 hover:bg-muted group"
+            className="lg:hidden relative w-12 h-12 flex items-center justify-center rounded-xl bg-background/70 backdrop-blur-xl border border-border/50 shadow-lg transition-all duration-300 hover:scale-105 group"
           >
             <div className="relative w-6 h-6">
-              <span className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
+              <span className={`absolute block h-0.5 w-6 bg-gradient-to-r from-primary to-accent transform transition-all duration-500 ${
                 isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
               }`} />
-              <span className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
-                isMenuOpen ? 'opacity-0' : 'opacity-100'
+              <span className={`absolute block h-0.5 w-6 bg-gradient-to-r from-primary to-accent transform transition-all duration-500 ${
+                isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
               }`} />
-              <span className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
+              <span className={`absolute block h-0.5 w-6 bg-gradient-to-r from-primary to-accent transform transition-all duration-500 ${
                 isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
               }`} />
             </div>
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
 
         </div>
