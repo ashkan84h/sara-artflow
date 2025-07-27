@@ -1,37 +1,162 @@
-import { Download, Calendar, MapPin, Award } from 'lucide-react';
-import Timeline from './Timeline';
+import { Download, Calendar, MapPin, Award, Building, Users, Target, Trophy } from 'lucide-react';
+import { Timeline } from './TimelineAceternity';
 import MovingBorderButton from './MovingBorderButton';
 
 const Experience = () => {
-  const experienceData = [
+  const timelineData = [
     {
-      year: '2022 - Present',
-      title: 'Senior Art Director',
-      institution: 'Creative Studio Iran',
-      description: 'Leading creative direction for major brand campaigns, managing a team of 8 designers, and developing innovative visual solutions for Fortune 500 clients. Increased client satisfaction by 35% and won 3 industry awards.',
-      type: 'experience' as const
+      title: "Apr 2022 - Present",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Building className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Social project management of Babyrst & Seagull brands</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Project manager & Art Director</p>
+              <p className="text-muted-foreground mt-2">
+                Leading comprehensive social media strategies and visual campaigns for two major brands. 
+                Responsible for creative direction, team management, and ensuring brand consistency across all digital touchpoints.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      year: '2020 - 2022',
-      title: 'Art Director',
-      institution: 'Digital Agency Tehran',
-      description: 'Oversaw visual identity projects for tech startups and established brands. Specialized in digital campaigns and user experience design. Successfully launched 15+ brands and increased agency revenue by 40%.',
-      type: 'experience' as const
+      title: "May 2020 - Apr 2022",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Target className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Dr Akhavi Laboratory</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Advertising manager</p>
+              <p className="text-muted-foreground mt-2">
+                Managed advertising campaigns and brand communications for a leading medical laboratory. 
+                Developed visual strategies that increased brand recognition and patient engagement.
+              </p>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                Cooperation with the following brands and healthcare partners.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      year: '2019 - 2020',
-      title: 'Senior Graphic Designer',
-      institution: 'Brand Design House',
-      description: 'Focused on brand identity development and print design. Led the redesign of 10+ corporate identities and mentored junior designers. Recognized for excellence in typography and color theory.',
-      type: 'experience' as const
+      title: "2019 - Present",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Users className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Freelance project</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Art Director</p>
+              <p className="text-muted-foreground mt-2">
+                Independent creative direction for diverse clients across multiple industries. 
+                Specialized in brand development, campaign creation, and visual storytelling for both local and international brands.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      year: '2018 - 2019',
-      title: 'Junior Art Director',
-      institution: 'Creative Collective',
-      description: 'Started career developing skills in visual communication and design strategy. Worked on diverse projects from editorial design to advertising campaigns. Built strong foundation in creative process and client collaboration.',
-      type: 'experience' as const
-    }
+      title: "Dec 2018 - Jul 2019",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Building className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Magnolia Advertising Agency</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Graphic Designer, Illustrator</p>
+              <p className="text-muted-foreground mt-2">
+                Created visual content for advertising campaigns, specializing in illustration and graphic design. 
+                Contributed to major client projects and developed expertise in brand visual communication.
+              </p>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                Worked with the following corporations and established strong industry relationships.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Jan 2018 - May 2020",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Target className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Domino Dairy and Ice Cream</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Freelance Graphic Designer, Illustrator</p>
+              <p className="text-muted-foreground mt-2">
+                Developed packaging design, marketing materials, and brand communications for a leading dairy company. 
+                Created appealing visual content that enhanced product appeal and market presence.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Feb 2017 - Dec 2018",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Building className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Four Mind Advertising Agency</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Graphic Designer, Illustrator</p>
+              <p className="text-muted-foreground mt-2">
+                Collaborated on international campaigns and developed design solutions for global brands. 
+                Gained valuable experience in cross-cultural design and international market understanding.
+              </p>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                Worked with the following international corporations and expanded global design perspective.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2013 - 2016",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Trophy className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Stavita Manufacturing Group</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Art Director</p>
+              <p className="text-muted-foreground mt-2">
+                Led the creative department for a major manufacturing company, overseeing brand identity and marketing materials. 
+                Developed comprehensive visual strategies that strengthened market position and brand recognition.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2009 - 2010",
+      content: (
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <Building className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold text-primary">Simavid Company</h3>
+              <p className="text-lg font-semibold text-muted-foreground">Visual Development and Modeler</p>
+              <p className="text-muted-foreground mt-2">
+                Started professional career in visual development and 3D modeling. 
+                Built foundational skills in digital design and developed technical expertise in visual creation tools.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
   ];
 
   const achievements = [
@@ -99,7 +224,7 @@ const Experience = () => {
           {/* Professional Timeline */}
           <div className="space-y-8 animate-fade-in-up animate-delay-400">
             <h3 className="heading-large text-center">Professional Timeline</h3>
-            <Timeline items={experienceData} />
+            <Timeline data={timelineData} />
           </div>
 
           {/* Achievements */}

@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system for Sara Ali Mohammadi Portfolio - Art Director */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+/* Design system for Sara Ali Mohammadi Portfolio - Art Director - Minimal & Modern */
 
 @layer base {
   :root {
@@ -17,24 +16,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 25%;
 
-    /* Primary - Vibrant Purple */
-    --primary: 262 83% 58%;
+    /* Primary - Minimal Dark */
+    --primary: 220 15% 15%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 262 83% 78%;
-    --primary-dark: 262 83% 38%;
+    --primary-light: 220 15% 25%;
+    --primary-dark: 220 15% 5%;
 
-    /* Secondary - Soft Gray */
+    /* Secondary - Light Gray */
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 15% 25%;
 
-    /* Muted - Light Gray */
+    /* Muted - Subtle Gray */
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    /* Accent - Teal */
-    --accent: 180 83% 58%;
+    /* Accent - Subtle Blue */
+    --accent: 220 60% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 180 83% 78%;
+    --accent-light: 220 60% 70%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -50,9 +49,9 @@
     --section-bg: hsl(220 14% 98%);
     --glass-bg: hsl(0 0% 100% / 0.8);
     
-    /* Typography */
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    /* Typography - Segoe UI */
+    --font-display: 'Segoe UI', system-ui, sans-serif;
+    --font-body: 'Segoe UI', system-ui, sans-serif;
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(220 15% 25% / 0.05);
